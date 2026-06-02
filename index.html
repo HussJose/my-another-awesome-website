@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Athena's Arbor Library</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">📚 Athena's Arbor</div>
+        <nav>
+            <a href="#" class="active">Home</a>
+            <a href="#">Catalog</a>
+            <a href="#">Events</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Your Next Adventure Awaits</h1>
+            <p>Explore thousands of books, digital resources, and community events.</p>
+            <a href="#catalog" class="btn">Browse Catalog</a>
+        </div>
+    </section>
+
+    <main id="catalog">
+        <div class="catalog-header">
+            <h2>Explore Our Collection</h2>
+            <div class="controls">
+                <input type="text" id="search-input" placeholder="Search by title or author...">
+                <select id="genre-filter">
+                    <option value="all">All Genres</option>
+                    <option value="fiction">Fiction</option>
+                    <option value="sci-fi">Sci-Fi</option>
+                    <option value="mystery">Mystery</option>
+                    <option value="biography">Biography</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="book-grid" id="book-grid">
+            </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Athena's Arbor Library. Open Chapters, Open Minds.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
