@@ -3,50 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Athena's Arbor Library</title>
+    <title>Athena's Arbor - Interactive Library Portal</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- Header & Navigation -->
     <header>
         <div class="logo">📚 Athena's Arbor</div>
-        <nav>
-            <a href="#" class="active">Home</a>
-            <a href="#">Catalog</a>
-            <a href="#">Events</a>
-            <a href="#">Contact</a>
-        </nav>
+        <div class="header-right">
+            <span id="user-stats">Books Checked Out: <strong id="borrowed-count">0</strong></span>
+            <button id="theme-toggle" class="btn-icon" aria-label="Toggle dark mode">🌙</button>
+        </div>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Your Next Adventure Awaits</h1>
-            <p>Explore thousands of books, digital resources, and community events.</p>
-            <a href="#catalog" class="btn">Browse Catalog</a>
+            <h1>Your Gateway to Infinite Worlds</h1>
+            <p>Explore, borrow, and keep track of your favorite reads dynamically.</p>
+            <a href="#portal-layout" class="btn">Access the Portal</a>
         </div>
     </section>
 
-    <main id="catalog">
-        <div class="catalog-header">
-            <h2>Explore Our Collection</h2>
-            <div class="controls">
-                <input type="text" id="search-input" placeholder="Search by title or author...">
-                <select id="genre-filter">
-                    <option value="all">All Genres</option>
-                    <option value="fiction">Fiction</option>
-                    <option value="sci-fi">Sci-Fi</option>
-                    <option value="mystery">Mystery</option>
-                    <option value="biography">Biography</option>
-                </select>
+    <!-- Main Interactive Portal Layout -->
+    <div class="portal-container" id="portal-layout">
+        
+        <!-- Sidebar: User Dashboard -->
+        <aside class="user-sidebar">
+            <div class="sidebar-section">
+                <h3>My Library Card</h3>
+                <div class="card-badge">Card Holder: Elite Reader</div>
             </div>
-        </div>
 
-        <div class="book-grid" id="book-grid">
+            <div class="sidebar-section">
+                <h3>Saved Watchlist (<span id="favorites-count">0</span>)</h3>
+                <ul id="favorites-list" class="sidebar-list">
+                    <li class="empty-msg">No favorited books yet.</li>
+                </ul>
             </div>
-    </main>
 
+            <div class="sidebar-section">
+                <h3>My Borrowed Books</h3>
+                <ul id="borrowed-list" class="sidebar-list">
+                    <li class="empty-msg">You haven't borrowed anything yet.</li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Content Area: Catalog -->
+        <main class="catalog-area">
+            <div class="catalog-header">
+                <h2>The Library Catalog</h2>
+                <div class="controls">
+                    <input type="text" id="search-input" placeholder="Search title or author...">
+                    <select id="genre-filter">
+                        <option value="all">All Genres</option>
+                        <option value="fiction">Fiction</option>
+                        <option value="sci-fi">Sci-Fi</option>
+                        <option value="mystery">Mystery</option>
+                        <option value="biography">Biography</option>
+                        <option value="fantasy">Fantasy</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Dynamic Book Grid -->
+            <div class="book-grid" id="book-grid">
+                <!-- Populated dynamically via TypeScript -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Athena's Arbor Library. Open Chapters, Open Minds.</p>
+        <p>&copy; 2026 Athena's Arbor Library. Powered by TypeScript & Pure CSS.</p>
     </footer>
 
     <script src="app.js"></script>
